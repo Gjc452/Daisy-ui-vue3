@@ -2,7 +2,10 @@
   <div>
     <div class="topNav">
       <div class="logo"></div>
-      <div class="menu"></div>
+      <ul class="menu">
+        <li>菜单1</li>
+        <li>菜单2</li>
+      </ul>
     </div>
     <div class="banner">
       <h1>雏菊UI</h1>
