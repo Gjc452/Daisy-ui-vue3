@@ -1,12 +1,6 @@
 <template>
   <div>
-    <div class="topNav">
-      <div class="logo"></div>
-      <ul class="menu">
-        <li>菜单1</li>
-        <li>菜单2</li>
-      </ul>
-    </div>
+    <Topnav/>
     <div class="banner">
       <h1>雏菊UI</h1>
       <h2>一个不一样的 UI 框架</h2>
@@ -19,8 +13,10 @@
 </template>
 
 <script lang="ts">
+import Topnav from '../components/Topnav.vue';
+
 export default {
-  name: 'Home'
+  components: {Topnav}
 };
 </script>
 
