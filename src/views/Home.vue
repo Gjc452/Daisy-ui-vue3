@@ -6,7 +6,7 @@
       <h2>一个不一样的 UI 框架</h2>
       <p class="actions">
         <a href="">GitHub</a>
-        <a href="">开始</a>
+        <router-link to="/doc">开始</router-link>
       </p>
     </div>
   </div>
@@ -23,6 +23,10 @@ export default {
 <style lang="scss" scoped>
 .banner {
   padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background: lightgreen;
 
   > .actions {
