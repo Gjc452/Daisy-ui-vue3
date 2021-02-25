@@ -1,5 +1,5 @@
 <template>
-  <button class="daisy-button" :class="classes">
+  <button class="daisy-button" :class="classes" :disabled="disabled">
     <slot/>
   </button>
 </template>
@@ -20,6 +20,10 @@ export default {
     level: {
       type: String,
       default: 'normal'
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   setup(props) {
@@ -43,6 +47,7 @@ $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
 $red: red;
+$grey: grey;
 .daisy-button {
   box-sizing: border-box;
   height: $h;
@@ -63,7 +68,8 @@ $red: red;
     margin-left: 8px;
   }
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: $blue;
     border-color: $blue;
   }
@@ -81,7 +87,8 @@ $red: red;
     box-shadow: none;
     color: $blue;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: lighten($blue, 10%);
     }
   }
@@ -91,7 +98,8 @@ $red: red;
     box-shadow: none;
     color: inherit;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background: darken(white, 5%);
     }
   }
@@ -164,6 +172,25 @@ $red: red;
       }
     }
   }
+
+  &.daisy-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+
+  &.daisy-theme-link, &.daisy-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+    }
+  }
+
 }
 
 </style>
