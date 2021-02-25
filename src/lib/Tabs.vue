@@ -9,7 +9,7 @@
       <div class="daisy-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="daisy-tabs-content">
-      <component class="daisy-tabs-content-item" :is="current" :key="selected"/>
+      <component class="daisy-tabs-content-item" :is="current" :key="current.props.title"/>
     </div>
   </div>
 </template>
