@@ -12,12 +12,16 @@
       标题
     </template>
   </Dialog>
+  <h1>示例1</h1>
+  <Button @click="showDialog">show</Button>
 </template>
 
 <script lang="ts">
 import Dialog from '../lib/Dialog.vue';
 import Button from '../lib/Button.vue';
 import {ref} from 'vue';
+import {openDialog} from '../lib/openDialog';
+
 
 export default {
   components: {Button, Dialog},
@@ -27,10 +31,22 @@ export default {
       visible.value = !visible.value;
     };
     const f1 = () => {
-      return true;
+      return false;
     };
     const f2 = () => {};
-    return {visible, toggle, f1, f2};
+    const showDialog = () => {
+      openDialog({
+        title: '标题',
+        content: '你好',
+        ok() {
+          console.log('ok');
+        },
+        cancel() {
+          console.log('cancel');
+        }
+      });
+    };
+    return {visible, toggle, f1, f2, showDialog};
   }
 };
 </script>
