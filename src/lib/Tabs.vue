@@ -1,6 +1,6 @@
 <template>
   <div class="daisy-tabs">
-    <div class="daisy-tabs-nav">
+    <div class="daisy-tabs-nav" ref="container">
       <div class="daisy-tabs-nav-item" v-for="(t,index) in titles"
            :class="{selected:t===selected}" @click="select(t)" :key="index"
            :ref="el=>{if(el) navItems[index]=el}">
@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import Tab from './Tab.vue';
-import {computed, ref, onMounted} from 'vue';
+import {computed, ref, onMounted, onUpdated} from 'vue';
 
 export default {
   props: {
@@ -25,16 +25,23 @@ export default {
     }
   },
   setup(props, context) {
-    const defaults = context.slots.default();
     const navItems = ref<HTMLDivElement[]>([]);
     const indicator = ref<HTMLDivElement>(null);
-    onMounted(() => {
+    const container = ref<HTMLDivElement>(null);
+    const x = () => {
       const divs = navItems.value;
       const result = divs.filter(div =>
           div.classList.contains('selected'))[0];
       const {width} = result.getBoundingClientRect();
       indicator.value.style.width = width + 'px';
-    });
+      const {left: left1} = container.value.getBoundingClientRect();
+      const {left: left2} = result.getBoundingClientRect();
+      const left = left2 - left1;
+      indicator.value.style.left = left + 'px';
+    };
+    onMounted(x);
+    onUpdated(x);
+    const defaults = context.slots.default();
     const current = computed(() => {
       return defaults.filter((tag) => {
         return tag.props.title === props.selected;
@@ -51,7 +58,7 @@ export default {
       context.emit('update:selected', title);
     };
     return {
-      defaults, titles, current, select, navItems, indicator
+      defaults, titles, current, select, navItems, indicator, container
     };
   }
 };
@@ -89,6 +96,7 @@ $border-color: #d9d9d9;
       background: $blue;
       bottom: -1px;
       width: 100px;
+      transition: all 250ms;
     }
   }
 
