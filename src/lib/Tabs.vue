@@ -4,6 +4,7 @@
       <div class="daisy-tabs-nav-item" v-for="(t,index) in titles"
            :class="{selected:t===selected}" @click="select(t)" :key="index">{{ t }}
       </div>
+      <div class="daisy-tabs-nav-indicator"></div>
     </div>
     <div class="daisy-tabs-content">
       <component class="daisy-tabs-content-item" :is="current" :key="selected"/>
@@ -54,6 +55,7 @@ $border-color: #d9d9d9;
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
+    position: relative;
 
     &-item {
       padding: 8px 0;
@@ -67,6 +69,15 @@ $border-color: #d9d9d9;
       &.selected {
         color: $blue;
       }
+    }
+
+    &-indicator {
+      position: absolute;
+      left: 0;
+      height: 3px;
+      background: $blue;
+      bottom: -1px;
+      width: 100px;
     }
   }
 
