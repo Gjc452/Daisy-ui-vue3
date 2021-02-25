@@ -7,6 +7,22 @@
     <Button theme="link">你好</Button>
     <Button theme="text">你好</Button>
   </div>
+  <h1>示例2</h1>
+  <div>
+    <Button size="big">大大</Button>
+    <Button>普通</Button>
+    <Button size="small">小小小</Button>
+  </div>
+  <div>
+    <Button theme="link" size="big">大大</Button>
+    <Button theme="link">普通</Button>
+    <Button size="small" theme="link">小小</Button>
+  </div>
+  <div>
+    <Button size="big" theme="text">大大</Button>
+    <Button theme="text">普通</Button>
+    <Button size="small" theme="text">小小</Button>
+  </div>
 </template>
 
 
@@ -16,7 +32,6 @@ import Button from '../lib/Button.vue';
 export default {
   components: {Button},
   setup() {
-
   }
 };
 </script>
