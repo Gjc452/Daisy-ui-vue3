@@ -4,12 +4,11 @@
       <Icon name="daisy"/>
     </div>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li>
+        <router-link to="/doc">文档</router-link>
+      </li>
     </ul>
-    <span class="toggleAside" @click="toggleAside">
-
-    </span>
+    <Icon v-if="toggleAsideButtonVisible" class="toggleAside" @click="toggleAside" name="menu"/>
   </div>
 </template>
 
@@ -18,6 +17,13 @@ import {inject, Ref} from 'vue';
 import Icon from '../lib/Icon.vue';
 
 export default {
+  props: {
+    toggleAsideButtonVisible: {
+      type: Boolean,
+      default: false
+
+    }
+  },
   components: {Icon},
   setup() {
     const asideVisible = inject<Ref<boolean>>('asideVisible');
@@ -65,9 +71,8 @@ $color: #007974;
 
   > .toggleAside {
     display: none;
-    width: 24px;
-    height: 24px;
-    background: red;
+    width: 32px;
+    height: 32px;
     position: absolute;
     left: 16px;
     top: 50%;
