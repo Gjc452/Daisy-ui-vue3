@@ -89,4 +89,14 @@ $color: #007974;
     }
   }
 }
+
+@media (max-width: 500px) {
+  .topnav {
+    z-index: 2;
+    background: white;
+    box-shadow: 0 0 2px rgb(0 0 0 / 25%);
+    padding: 8px;
+  }
+
+}
 </style>

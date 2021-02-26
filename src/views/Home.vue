@@ -22,7 +22,7 @@
       <li>
         <Icon name="ts"/>
         <h3>基于 TypeScript</h3>
-        <p>源代码采用 TypeScript 书写（非严格检查）</p>
+        <p>采用 TypeScript 书写（非严格检查）</p>
       </li>
       <li>
         <Icon name="light"/>
@@ -52,7 +52,7 @@ $color: #007974;
 
 .features {
   margin: 64px auto;
-  width: 400px;
+  padding: 0 16px;
   @media (min-width: 800px) {
     width: 800px;
   }
