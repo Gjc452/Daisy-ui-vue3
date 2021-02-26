@@ -14,7 +14,6 @@
 
 <script lang="ts">
 import {inject, Ref} from 'vue';
-import Icon from '../lib/Icon.vue';
 
 export default {
   props: {
@@ -24,7 +23,6 @@ export default {
 
     }
   },
-  components: {Icon},
   setup() {
     const asideVisible = inject<Ref<boolean>>('asideVisible');
     const toggleAside = () => {
