@@ -1,8 +1,8 @@
 <template>
   <div class="topnav">
-    <div class="logo" @click="toggleAside">
+    <router-link to="/" class="logo" @click="toggleAside">
       <Icon name="daisy"/>
-    </div>
+    </router-link>
     <ul class="menu">
       <li>
         <router-link to="/doc">文档</router-link>
