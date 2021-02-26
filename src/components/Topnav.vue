@@ -1,6 +1,8 @@
 <template>
   <div class="topnav">
-    <div class="logo" @click="toggleAside">Logo</div>
+    <div class="logo" @click="toggleAside">
+      <Icon name="daisy"/>
+    </div>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
@@ -13,8 +15,10 @@
 
 <script lang="ts">
 import {inject, Ref} from 'vue';
+import Icon from '../lib/Icon.vue';
 
 export default {
+  components: {Icon},
   setup() {
     const asideVisible = inject<Ref<boolean>>('asideVisible');
     const toggleAside = () => {
@@ -26,7 +30,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$color: #007974;
 .topnav {
+  color: $color;
   display: flex;
   padding: 16px;
   z-index: 10;
@@ -40,6 +46,11 @@ export default {
   > .logo {
     max-width: 6em;
     margin-right: auto;
+
+    > svg {
+      width: 32px;
+      height: 32px;
+    }
   }
 
   > .menu {
