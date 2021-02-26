@@ -8,7 +8,7 @@
       <Button @click="toggle">查看代码</Button>
     </div>
     <div class="demo-code">
-      <pre v-if="codeVisible" class="language-html"
+      <pre v-if="codeVisible"
            v-html="Prism.highlight(component.__sourceCode, Prism.languages.html, 'html')"/>
     </div>
   </div>
@@ -40,6 +40,7 @@ export default {
 $border-color: #d9d9d9;
 .demo {
   border: 1px solid $border-color;
+  border-radius: 4px;
   margin: 16px 0 32px;
 
   > h2 {
@@ -60,6 +61,7 @@ $border-color: #d9d9d9;
   &-code {
     padding: 8px 16px;
     border-top: 1px dashed $border-color;
+    background: rgb(250, 250, 250);
 
     > pre {
       line-height: 1.1;

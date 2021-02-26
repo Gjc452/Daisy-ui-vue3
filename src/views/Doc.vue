@@ -74,9 +74,9 @@ export default {
 
     > aside {
       flex-shrink: 0;
-      background: lightblue;
+      background: white;
       width: 150px;
-      padding: 70px 0 16px;
+      padding: 80px 0 16px;
       position: fixed;
       top: 0;
       left: 0;
@@ -84,20 +84,26 @@ export default {
       z-index: 1;
 
       > h2 {
-        margin-bottom: 4px;
+        margin: 4px 0;
         padding: 0 16px;
       }
 
       > ol {
         > li {
           > a {
+            font-weight: 400;
+            color: #444;
             display: block;
             padding: 4px 16px;
             text-decoration: none;
           }
 
+          &:hover {
+            color: #409eff;
+          }
+
           .router-link-active {
-            background: white;
+            color: #409eff;
           }
         }
       }

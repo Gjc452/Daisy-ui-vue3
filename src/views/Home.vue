@@ -52,12 +52,14 @@ $color: #007974;
 
 .features {
   margin: 64px auto;
-  padding: 0 16px;
   @media (min-width: 800px) {
     width: 800px;
   }
   @media (min-width: 1200px) {
     width: 1200px;
+  }
+  @media (max-width: 500px) {
+    padding: 0 16px;
   }
 
   > ul {
