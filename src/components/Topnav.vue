@@ -38,7 +38,7 @@ $color: #07003B;
 .topnav {
   color: $color;
   display: flex;
-  padding: 16px;
+  padding: 8px 16px;
   z-index: 10;
   justify-content: center;
   align-items: center;
@@ -97,7 +97,6 @@ $color: #07003B;
     z-index: 2;
     background: white;
     box-shadow: 0 0 2px rgb(0 0 0 / 25%);
-    padding: 8px;
   }
 
 }

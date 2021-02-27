@@ -99,17 +99,20 @@ $color: #07003B;
 
 .banner {
   color: $color;
-  padding: 100px 0;
+  padding: 160px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media (max-width: 500px) {
+    padding: 100px 0;
+  }
 
   > .actions {
     padding: 8px 0;
 
     a {
-      background: lighten($color, 10%);
+      background: #7A79B7;
       margin: 0 8px;
       color: white;
       display: inline-block;
