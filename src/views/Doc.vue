@@ -31,7 +31,7 @@
           </li>
         </ol>
       </aside>
-      <main>
+      <main @click="toggleAside">
         <router-view/>
       </main>
     </div>
@@ -46,7 +46,10 @@ export default {
   components: {Topnav},
   setup() {
     const asideVisible = inject<Ref<boolean>>('asideVisible');
-    return {asideVisible};
+    const toggleAside = () => {
+      asideVisible.value = false;
+    };
+    return {asideVisible, toggleAside};
   }
 };
 </script>
