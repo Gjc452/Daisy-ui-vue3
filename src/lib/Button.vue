@@ -12,19 +12,19 @@ export default {
   props: {
     theme: {
       type: String,
-      default: 'button'
+      default: 'button',
     },
     size: {
       type: String,
-      default: 'normal'
+      default: 'normal',
     },
     level: {
       type: String,
-      default: 'normal'
+      default: 'normal',
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     loading: {
       type: Boolean,
@@ -37,11 +37,11 @@ export default {
       return {
         [`wish-theme-${theme}`]: theme,
         [`wish-size-${size}`]: size,
-        [`wish-level-${level}`]: level
+        [`wish-level-${level}`]: level,
       };
     });
     return {classes};
-  }
+  },
 };
 </script>
 
