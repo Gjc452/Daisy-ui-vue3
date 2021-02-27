@@ -3,10 +3,11 @@
     <div class="topnavAndBanner">
       <Topnav/>
       <div class="banner">
-        <h1>雏菊UI</h1>
-        <h2>一个不一样的 UI 框架</h2>
+        <h1>Wish-UI</h1>
+        <h2>探索无限可能</h2>
         <p class="actions">
           <a href="">GitHub</a>
+          <a href="">码云</a>
           <router-link to="/doc">开始</router-link>
         </p>
       </div>
@@ -42,11 +43,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$green: #02bcb0;
 $border-radius: 4px;
-$color: #007974;
+$color: #07003B;
 .topnavAndBanner {
-  background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
+  background: rgb(231, 241, 255);
+  //background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
   clip-path: ellipse(80% 60% at 50% 40%);
 }
 
@@ -108,7 +109,7 @@ $color: #007974;
     padding: 8px 0;
 
     a {
-      background: $green;
+      background: lighten($color, 10%);
       margin: 0 8px;
       color: white;
       display: inline-block;

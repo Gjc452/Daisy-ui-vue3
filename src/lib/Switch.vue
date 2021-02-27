@@ -1,5 +1,5 @@
 <template>
-  <button class="daisy-switch" :class="{'daisy-checked':value}" @click="toggle">
+  <button class="wish-switch" :class="{'wish-checked':value}" @click="toggle">
     <span></span>
   </button>
 </template>
@@ -21,7 +21,7 @@ export default {
 <style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-.daisy-switch {
+.wish-switch {
   height: $h;
   width: $h * 2;
   border: none;
@@ -40,7 +40,7 @@ $h2: $h - 4px;
     transition: all 250ms;
   }
 
-  &.daisy-checked {
+  &.wish-checked {
     background: #1890ff;
 
     > span {
@@ -58,7 +58,7 @@ $h2: $h - 4px;
     }
   }
 
-  &.daisy-checked:active {
+  &.wish-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;

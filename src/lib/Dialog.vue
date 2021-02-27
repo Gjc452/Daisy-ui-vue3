@@ -1,12 +1,12 @@
 <template>
   <template v-if="visible">
     <Teleport to="body">
-      <div class="daisy-dialog-overlay" @click="onClickOverlay"></div>
-      <div class="daisy-dialog-wrapper">
-        <div class="daisy-dialog">
+      <div class="wish-dialog-overlay" @click="onClickOverlay"></div>
+      <div class="wish-dialog-wrapper">
+        <div class="wish-dialog">
           <header>
             <slot name="title"/>
-            <span class="daisy-dialog-close" @click="close"></span>
+            <span class="wish-dialog-close" @click="close"></span>
           </header>
           <main>
             <slot name="content"/>
@@ -70,7 +70,7 @@ export default {
 <style lang="scss">
 $radius: 4px;
 $border-color: #d9d9d9;
-.daisy-dialog {
+.wish-dialog {
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade-out(black, 0.5);

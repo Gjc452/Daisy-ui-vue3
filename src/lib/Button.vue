@@ -1,6 +1,6 @@
 <template>
-  <button class="daisy-button" :class="classes" :disabled="disabled">
-    <span v-if="loading" class="daisy-loadingIndicator"></span>
+  <button class="wish-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="wish-loadingIndicator"></span>
     <slot/>
   </button>
 </template>
@@ -35,9 +35,9 @@ export default {
     const {theme, size, level} = props;
     const classes = computed(() => {
       return {
-        [`daisy-theme-${theme}`]: theme,
-        [`daisy-size-${size}`]: size,
-        [`daisy-level-${level}`]: level
+        [`wish-theme-${theme}`]: theme,
+        [`wish-size-${size}`]: size,
+        [`wish-level-${level}`]: level
       };
     });
     return {classes};
@@ -53,7 +53,7 @@ $blue: #40a9ff;
 $radius: 4px;
 $red: red;
 $grey: grey;
-.daisy-button {
+.wish-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
@@ -87,7 +87,7 @@ $grey: grey;
     border: 0;
   }
 
-  &.daisy-theme-link {
+  &.wish-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
@@ -98,7 +98,7 @@ $grey: grey;
     }
   }
 
-  &.daisy-theme-text {
+  &.wish-theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
@@ -109,20 +109,20 @@ $grey: grey;
     }
   }
 
-  &.daisy-size-big {
+  &.wish-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px
   }
 
-  &.daisy-size-small {
+  &.wish-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
 
-  &.daisy-theme-button {
-    &.daisy-level-main {
+  &.wish-theme-button {
+    &.wish-level-main {
       background: $blue;
       color: white;
       border-color: $blue;
@@ -134,7 +134,7 @@ $grey: grey;
       }
     }
 
-    &.daisy-level-danger {
+    &.wish-level-danger {
       background: $red;
       border-color: $red;
       color: white;
@@ -147,8 +147,8 @@ $grey: grey;
     }
   }
 
-  &.daisy-theme-link {
-    &.daisy-level-danger {
+  &.wish-theme-link {
+    &.wish-level-danger {
       color: $red;
 
       &:hover,
@@ -158,8 +158,8 @@ $grey: grey;
     }
   }
 
-  &.daisy-theme-text {
-    &.daisy-level-main {
+  &.wish-theme-text {
+    &.wish-level-main {
       color: $blue;
 
       &:hover,
@@ -168,7 +168,7 @@ $grey: grey;
       }
     }
 
-    &.daisy-level-danger {
+    &.wish-level-danger {
       color: $red;
 
       &:hover,
@@ -178,7 +178,7 @@ $grey: grey;
     }
   }
 
-  &.daisy-theme-button {
+  &.wish-theme-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
@@ -189,14 +189,14 @@ $grey: grey;
     }
   }
 
-  &.daisy-theme-link, &.daisy-theme-text {
+  &.wish-theme-link, &.wish-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
 
-  > .daisy-loadingIndicator {
+  > .wish-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
@@ -205,11 +205,11 @@ $grey: grey;
     border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
-    animation: daisy-spin 1s infinite linear;
+    animation: wish-spin 1s infinite linear;
   }
 }
 
-@keyframes daisy-spin {
+@keyframes wish-spin {
   0% {
     transform: rotate(0deg)
   }

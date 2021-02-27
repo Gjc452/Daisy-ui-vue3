@@ -1,15 +1,15 @@
 <template>
-  <div class="daisy-tabs">
-    <div class="daisy-tabs-nav" ref="container">
-      <div class="daisy-tabs-nav-item" v-for="(t,index) in titles"
+  <div class="wish-tabs">
+    <div class="wish-tabs-nav" ref="container">
+      <div class="wish-tabs-nav-item" v-for="(t,index) in titles"
            :class="{selected:t===selected}" @click="select(t)" :key="index"
            :ref="el=>{if(t ===selected) selectedItem = el}">
         {{ t }}
       </div>
-      <div class="daisy-tabs-nav-indicator" ref="indicator"></div>
+      <div class="wish-tabs-nav-indicator" ref="indicator"></div>
     </div>
-    <div class="daisy-tabs-content">
-      <component class="daisy-tabs-content-item" :is="current" :key="current.props.title"/>
+    <div class="wish-tabs-content">
+      <component class="wish-tabs-content-item" :is="current" :key="current.props.title"/>
     </div>
   </div>
 </template>
@@ -65,7 +65,7 @@ export default {
 $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
-.daisy-tabs {
+.wish-tabs {
   &-nav {
     display: flex;
     color: $color;

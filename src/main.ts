@@ -1,4 +1,4 @@
-import './lib/daisy.scss';
+import './lib/wish.scss';
 import './index.scss';
 import {createApp} from 'vue';
 import App from './App.vue';

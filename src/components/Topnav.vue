@@ -1,7 +1,7 @@
 <template>
   <div class="topnav">
     <router-link to="/" class="logo" @click="toggleAside">
-      <Icon name="daisy"/>
+      <Icon name="wish"/>
     </router-link>
     <ul class="menu">
       <li>
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color: #007974;
+$color: #07003B;
 .topnav {
   color: $color;
   display: flex;

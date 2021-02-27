@@ -104,7 +104,7 @@ export default {
         > li {
           > a {
             font-weight: 400;
-            color: #444;
+            color: rgba(0, 0, 0, 0.7);
             display: block;
             padding: 4px 16px;
             text-decoration: none;
