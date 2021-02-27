@@ -4,9 +4,9 @@
     <div class="demo-component">
       <component :is="component"/>
     </div>
-    <div class="demo-code">
-      <pre v-if="codeVisible"
-           v-html="Prism.highlight(component.__sourceCode, Prism.languages.html, 'html')"/>
+    <div class="demo-code" ref="root">
+      <pre
+          v-html="Prism.highlight(component.__sourceCode, Prism.languages.html, 'html')"/>
     </div>
     <div class="demo-actions">
       <Button v-if="codeVisible" @click="hideCode">隐藏代码</Button>
@@ -19,7 +19,7 @@
 import Button from '../lib/Button.vue';
 import 'prismjs';
 import 'prismjs/themes/prism.css';
-import {ref} from 'vue';
+import {onMounted, onUpdated, ref} from 'vue';
 
 const Prism = (window as any).Prism;
 export default {
@@ -28,14 +28,23 @@ export default {
     component: Object,
   },
   setup() {
+    const root = ref<HTMLDivElement>(null);
     const codeVisible = ref(false);
+    let height;
     const showCode = () => {
       codeVisible.value = true;
+      root.value.style.height = height + 'px';
     };
     const hideCode = () => {
       codeVisible.value = false;
+      root.value.style.height = '0px';
     };
-    return {Prism, showCode, hideCode, codeVisible};
+    const x = () => {
+      height = root.value.getBoundingClientRect().height;
+      root.value.style.height = '0px';
+    };
+    onMounted(x);
+    return {Prism, showCode, hideCode, codeVisible, root};
   }
 };
 </script>
@@ -68,6 +77,8 @@ $border-color: #d9d9d9;
   &-code {
     border-top: 1px dashed $border-color;
     background: rgb(250, 250, 250);
+    overflow: hidden;
+    transition: all 300ms;
 
     > pre {
       padding: 8px 16px;
