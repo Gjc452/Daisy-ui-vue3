@@ -48,7 +48,7 @@ export default {
       return tag.props.title;
     });
     defaults.forEach((tag) => {
-      if (tag.type !== Tab)
+      if (tag.type.name !== Tab.name)
         throw new Error('Tabs 子标签必须是 Tab');
     });
     const select = (title: string) => {
