@@ -10,8 +10,8 @@ export default {
     globals: {
       vue: 'Vue'
     },
-    name: 'Wish',
-    file: 'dist/lib/Wish.js',
+    name: 'wish',
+    file: 'dist/lib/wish.js',
     format: 'umd',
     plugins: [terser()]
   },

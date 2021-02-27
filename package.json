@@ -1,6 +1,10 @@
 {
-  "name": "wish-ui",
-  "version": "0.0.0",
+  "name": "wish3-ui",
+  "files": [
+    "dist/lib/*"
+  ],
+  "main": "dis/lib/wish.js",
+  "version": "0.0.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
