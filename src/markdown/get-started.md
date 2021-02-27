@@ -21,7 +21,7 @@ import {Button, Tabs, Switch, Dialog} from "wish-ui"
   </div>
 </template>
 <script>
-import {Button, Tabs, Switch, Dialog} from "wish-ui"
+import {Button, Tabs, Switch, Dialog} from "wish3-ui"
 export default {
   components: {Button}
 }
